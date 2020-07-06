@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import router from '@router'
 import store from '@state/store'
+import { BootstrapVue } from 'bootstrap-vue'
 import App from './app.vue'
+import 'bootstrap/dist/css/bootstrap.css'
 
 // Globally register all `_base`-prefixed components
 import '@components/_globals'
@@ -14,6 +16,9 @@ if (process.env.VUE_APP_TEST === 'e2e') {
   // Ensure tests fail when Vue emits an error.
   Vue.config.errorHandler = window.Cypress.cy.onUncaughtException
 }
+
+//  Addin bootstrap to the App
+Vue.use(BootstrapVue)
 
 const app = new Vue({
   router,

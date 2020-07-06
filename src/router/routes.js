@@ -94,6 +94,14 @@ export default [
     path: '*',
     redirect: '404',
   },
+  {
+    path: '/playGround',
+    name: 'playGround',
+    component: () => lazyLoadView(import('@views/playGroundView.vue')),
+    meta: {
+      authRequired: true,
+    },
+  },
 ]
 
 // Lazy-loads view components, but with better UX. A loading view
